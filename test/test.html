@@ -108,6 +108,10 @@
         ok(element.hasRole('eight'));
       });
 
+      test('custom role attribute', function(){
+        window.ROLE_ATTRIBUTE_NAME = 'data-label';
+        equalSelector('@ten', '[data-label~=ten]');
+      });
     });
 
   </script>
@@ -136,6 +140,7 @@
       <div id="seven" role="zero zero one two three three two two one"></div>
       <div id="eight"></div>
       <div id="nine" role="nine"></div>
+      <div id="ten" data-label="ten"></div>
     </div>
   </body>
 </html>
